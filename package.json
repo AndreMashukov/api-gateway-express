@@ -5,6 +5,7 @@
   "main": "src/service/index.js",
   "scripts": {
     "start": "ts-node src/service/index.ts",
+    "watch": "nodemon --watch src --ext ts --exec ts-node --ignore '*.test.ts' --delay 3 src/service/index.ts",
     "lint": "tslint -p src/tsconfig.app.json"
   },
   "repository": {
