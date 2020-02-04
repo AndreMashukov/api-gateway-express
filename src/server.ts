@@ -7,6 +7,7 @@ import { Server } from 'http';
  * Defines HTTP request mappings, basic as well as request-mapping-specific
  * middleware chains for application logic, config and everything else.
  */
+
 export class ExpressServer {
     private server?: Express;
     private httpServer?: Server;
@@ -15,6 +16,7 @@ export class ExpressServer {
         const server = express();
         this.httpServer = this.listen(server, port);
         this.server = server;
+        this.mountRoutes();
         return this.server;
     }
 
@@ -24,5 +26,17 @@ export class ExpressServer {
 
     public kill() {
         if (this.httpServer) this.httpServer.close();
+    }
+
+    private mountRoutes (): void {
+      const router = express.Router();
+      router.get('/', (req, res) => {
+        // tslint:disable-next-line: no-console
+        console.log(req.params);
+        res.json({
+          message: 'KJ 7R4'
+        });
+      });
+      this.server.use('/', router);
     }
 }
