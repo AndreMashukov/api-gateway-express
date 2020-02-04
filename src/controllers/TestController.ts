@@ -5,7 +5,7 @@ export class TestController {
     // tslint:disable-next-line: no-console
     console.log(req.params);
     res.json({
-      message: 'KJ 7R4'
+      message: 'Test Controller'
     });
   }
 }

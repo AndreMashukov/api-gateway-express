@@ -1,8 +1,6 @@
-import express from 'express';
-import { Express } from 'express';
+import express, { Express } from 'express';
 import { Server } from 'http';
-import { TestController } from './controllers/TestController';
-// import { Routes } from './routes';
+import { Routes } from './routes';
 
 /**
  * Abstraction around the raw Express.js server and Nodes' HTTP server.
@@ -19,6 +17,7 @@ export class ExpressServer {
         this.httpServer = this.listen(server, port);
         this.server = server;
         this.mountRoutes();
+
         return this.server;
     }
 
@@ -33,9 +32,7 @@ export class ExpressServer {
     }
 
     private mountRoutes (): void {
-      const router = express.Router();
-      const testController = new TestController();
-      router.get('/');
-      this.server.use('/', testController.get);
+      const router = new Routes();
+      this.server.use('/', router.getTestRoutes());
     }
 }
