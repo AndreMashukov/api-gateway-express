@@ -2,6 +2,7 @@ import express from 'express';
 import { Express } from 'express';
 import { Server } from 'http';
 import { TestController } from './controllers/TestController';
+// import { Routes } from './routes';
 
 /**
  * Abstraction around the raw Express.js server and Nodes' HTTP server.
