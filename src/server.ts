@@ -25,7 +25,9 @@ export class ExpressServer {
     }
 
     public kill() {
-        if (this.httpServer) this.httpServer.close();
+        if (this.httpServer) {
+          this.httpServer.close();
+        }
     }
 
     private mountRoutes (): void {

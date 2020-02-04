@@ -25,15 +25,15 @@ export class Application {
             Application.shutdownProperly(2, express);
         });
         process.on('SIGINT', () => {
-            console.info('Caught SIGINT');
+            console.log('Caught SIGINT');
             Application.shutdownProperly(128 + 2, express);
         });
         process.on('SIGTERM', () => {
-            console.info('Caught SIGTERM');
+            console.log('Caught SIGTERM');
             Application.shutdownProperly(128 + 2, express);
         });
         process.on('exit', () => {
-            console.info('Exiting');
+            console.log('Exiting');
         });
     }
 
@@ -41,7 +41,7 @@ export class Application {
         Promise.resolve()
             .then(() => express.kill())
             .then(() => {
-                console.info('Shutdown complete');
+                console.log('Shutdown complete');
                 process.exit(exitCode);
             })
             .catch(err => {
