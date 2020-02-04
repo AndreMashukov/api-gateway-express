@@ -1,6 +1,7 @@
 import express from 'express';
 import { Express } from 'express';
 import { Server } from 'http';
+import { TestController } from './controllers/TestController';
 
 /**
  * Abstraction around the raw Express.js server and Nodes' HTTP server.
@@ -32,13 +33,8 @@ export class ExpressServer {
 
     private mountRoutes (): void {
       const router = express.Router();
-      router.get('/', (req, res) => {
-        // tslint:disable-next-line: no-console
-        console.log(req.params);
-        res.json({
-          message: 'KJ 7R4'
-        });
-      });
-      this.server.use('/', router);
+      const testController = new TestController();
+      router.get('/');
+      this.server.use('/', testController.get);
     }
 }
