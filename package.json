@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndreMashukov/api-gateway-express.git"
+    "url": "git+https://github.com/AndreMashukov/express-boilerpalte.git"
   },
   "author": "Andrey Mashukov <mashukov.andrey@yahoo.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AndreMashukov/api-gateway-express/issues"
+    "url": "https://github.com/AndreMashukov/express-boilerpalte/issues"
   },
-  "homepage": "https://github.com/AndreMashukov/api-gateway-express#readme",
+  "homepage": "https://github.com/AndreMashukov/express-boilerpalte#readme",
   "dependencies": {
     "express": "^4.17.1"
   },
