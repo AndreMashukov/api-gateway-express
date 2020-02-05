@@ -1,12 +1,17 @@
 import express, { Router } from 'express';
-import { TestController } from './controllers/TestController';
+import { HomeController, TestController } from './controllers';
 
 export class Routes {
   private routes = express.Router();
-  private testController: TestController;
+  private testController: TestController = new TestController();
+  private homeController: HomeController = new HomeController();
 
-  public getTestRoutes(): Router {
-    this.testController = new TestController();
-    return this.routes.get('/', this.testController.get);
+  constructor() {
+    this.routes.get('/', this.homeController.get);
+    this.routes.get('/test', this.testController.get);
+  }
+
+  public getAllRoutes(): Router {
+    return this.routes;
   }
 }
