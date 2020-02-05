@@ -2,14 +2,11 @@ import express, { Router } from 'express';
 import { HomeController, TestController } from './controllers';
 
 export class Routes {
-  private routes = express.Router();
+  public static getAllRoutes(): Router {
+    const routes = express.Router();
+    routes.get('/', HomeController.get);
+    routes.get('/test', TestController.get);
 
-  constructor() {
-    this.routes.get('/', HomeController.get);
-    this.routes.get('/test', TestController.get);
-  }
-
-  public getAllRoutes(): Router {
-    return this.routes;
+    return routes;
   }
 }

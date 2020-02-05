@@ -32,7 +32,6 @@ export class ExpressServer {
     }
 
     private mountRoutes (): void {
-      const router = new Routes();
-      this.server.use('/', router.getAllRoutes());
+      this.server.use('/', Routes.getAllRoutes());
     }
 }
