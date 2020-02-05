@@ -3,12 +3,10 @@ import { HomeController, TestController } from './controllers';
 
 export class Routes {
   private routes = express.Router();
-  private testController: TestController = new TestController();
-  private homeController: HomeController = new HomeController();
 
   constructor() {
-    this.routes.get('/', this.homeController.get);
-    this.routes.get('/test', this.testController.get);
+    this.routes.get('/', HomeController.get);
+    this.routes.get('/test', TestController.get);
   }
 
   public getAllRoutes(): Router {
