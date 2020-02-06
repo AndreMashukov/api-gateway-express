@@ -4,8 +4,6 @@ export class TestController {
   public static async get(req: Request, res: Response): Promise<void> {
     // tslint:disable-next-line: no-console
     console.log(req.params);
-    res.json({
-      message: 'Test Controller'
-    });
+    res.send('Test Controller');
   }
 }

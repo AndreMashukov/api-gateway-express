@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import { Server } from 'http';
 import { Routes } from './routes';
+import morgan from 'morgan';
 
 /**
  * Abstraction around the raw Express.js server and Nodes' HTTP server.
@@ -17,6 +18,7 @@ export class ExpressServer {
         this.httpServer = this.listen(server, port);
         this.server = server;
         this.mountRoutes();
+        this.server.use(morgan('dev'));
 
         return this.server;
     }
