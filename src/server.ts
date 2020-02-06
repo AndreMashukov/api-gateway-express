@@ -17,8 +17,8 @@ export class ExpressServer {
         const server = express();
         this.httpServer = this.listen(server, port);
         this.server = server;
-        this.mountRoutes();
         this.server.use(morgan('dev'));
+        this.mountRoutes();
 
         return this.server;
     }
