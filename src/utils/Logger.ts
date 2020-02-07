@@ -24,8 +24,7 @@ export class Logger {
 
         this.winstonLog = winston.createLogger({
           transports: [
-            new winston.transports.File({
-              filename: path.join(__dirname + '/../../', 'file.log'),
+            new winston.transports.Console({
               format: winston.format.combine(
                 winston.format.timestamp({
                   format: 'YYYY-MM-DD hh:mm:ss A ZZ'
