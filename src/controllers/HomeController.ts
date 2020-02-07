@@ -5,7 +5,7 @@ const logger = new Logger(__filename);
 
 export class HomeController {
   public static async get(req: Request, res: Response): Promise<void> {
-    logger.info(JSON.stringify(req.params));
+    logger.debug(req.params);
     res.json({
       message: 'Home Controller'
     });
