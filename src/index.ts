@@ -1,4 +1,5 @@
 import { Application } from './app';
+import { Logger } from './utils/Logger';
 
 /**
  * Entrypoint for bootstrapping and starting the application.
@@ -7,6 +8,8 @@ import { Application } from './app';
  * This is about to come later!
  */
 
+const logger = new Logger();
+
 Application.createApplication().then(() => {
-    console.log('The application was started! Kill it using Ctrl + C');
+    logger.info('The application was started! Kill it using Ctrl + C');
 });
